@@ -12,11 +12,21 @@ public class UniqueWords
 	  int count = 0;
 	  
       for (int i = 0; i < list.size(); i++)
-      {		 for (int j = 0; j < list.size(); j++)
+      {
+    	  boolean isUnique = true;    	  
+    	  for (int j = 0; j < list.size(); j++)
 		 {
-			
+    		  if (i != j && list.get(i).equals(list.get(j)))
+    		  {
+    			  isUnique = false;
+    			  break;
+    		  }
 		 }
-      }
+    	  if (isUnique)
+    	  {
+    		  count++;
+    	  }
+       }
 	  return count;
    }
 
